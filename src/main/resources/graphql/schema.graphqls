@@ -1,0 +1,28 @@
+type Livro {
+    id: ID!
+    titulo: String!
+    genero: String!
+    autor: Autor
+    editora: Editora
+}
+
+type Autor{
+    id: ID!
+    nome: String
+}
+
+type Editora{
+    id: ID!
+    nome: String
+}
+
+type Query{
+    livros: [Livro]!
+    autores: [Autor]!
+    editoras: [Editora]!
+
+}
+
+type Mutation{
+    writeLivro(titulo:String): Livro!
+}
